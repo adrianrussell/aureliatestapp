@@ -101,13 +101,14 @@ echo ************** call node --version
 call node --version
 
 echo ************** call node --version
-call !NPM_CMD! install --production
+call !NPM_CMD! install
  
 :: 4. Run our grunt task
 
 :: 4.1 We can't install grunt-cli globally - so intall it locally
+echo "Install of Aurelia started"
 call !NPM_CMD! install aurelia-cli
-
+echo "Install of Aurelia complete"
 :: 4.2 
 ::
 :: NOTE: this won't work as it will not run with the package.json configure 
