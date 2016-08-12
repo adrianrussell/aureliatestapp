@@ -1,5 +1,6 @@
 
 :: 2. Select node version
+echo "Starting Select Node Version"
 
 call :SelectNodeVersion
 echo "Starting Aurelia Command line install"
