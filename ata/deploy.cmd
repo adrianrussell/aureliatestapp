@@ -11,10 +11,11 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 :: 2. Select node version
 
 call :SelectNodeVersion
-
+echo "Starting Aurelia Command line install"
 :: 3. Install the aurelia command line
 
 call :ExecuteCmd !NPM_CMD! install aurelia-cli -g
+echo "Aurelia Command line install Complete"
 
 :: 4. Install npm packages
 
@@ -23,8 +24,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
 
   call :ExecuteCmd !NPM_CMD! install
-
-  call :ExecuteCmd !NPM_CMD! install aurelia-cli -g
 
   IF !ERRORLEVEL! NEQ 0 goto error
 
